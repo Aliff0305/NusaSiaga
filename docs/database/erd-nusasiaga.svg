@@ -1,0 +1,1557 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3600" height="2540" viewBox="0 0 3600 2540">
+
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; }
+      .sub { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 400; }
+      .tname { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 14px; fill: #FFFFFF; }
+      .cname { font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; fill: #0F172A; font-weight: 600; }
+      .ctype { font-family: 'Consolas', 'Courier New', monospace; font-size: 11px; fill: #475569; }
+      .badge-txt { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 9px; fill: #FFFFFF; }
+      .rel-lbl { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 700; font-size: 11px; }
+    </style>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#EA580C"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7C3AED"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0D9488"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="3600" height="2540" fill="#F8FAFC"/>
+
+
+  <rect x="0" y="0" width="3600" height="115" fill="#0F172A"/>
+  <rect x="0" y="110" width="3600" height="5" fill="#0EA5E9"/>
+  <text x="50" y="50" class="title" font-size="30" fill="#FFFFFF">NusaSiaga — Entity Relationship Diagram (ERD)</text>
+  <text x="50" y="84" class="sub" font-size="16" fill="#94A3B8">Database: nusasiaga • MySQL 8.4.3 (InnoDB, utf8mb4_unicode_ci, Spatial SRID 4326) • 24 Tabel • 35 Foreign Keys • 6 Domain</text>
+
+<rect x="2320" y="34" width="36" height="22" rx="4" fill="#F59E0B"/>
+<text x="2338" y="49" text-anchor="middle" class="badge-txt" font-size="11">PK</text>
+<text x="2364" y="49" class="sub" font-size="13" fill="#E2E8F0">Primary Key</text>
+<rect x="2485" y="34" width="36" height="22" rx="4" fill="#3B82F6"/>
+<text x="2503" y="49" text-anchor="middle" class="badge-txt" font-size="11">FK</text>
+<text x="2529" y="49" class="sub" font-size="13" fill="#E2E8F0">Foreign Key</text>
+<rect x="2650" y="34" width="36" height="22" rx="4" fill="#8B5CF6"/>
+<text x="2668" y="49" text-anchor="middle" class="badge-txt" font-size="11">UK</text>
+<text x="2694" y="49" class="sub" font-size="13" fill="#E2E8F0">Unique Key</text>
+<rect x="2815" y="34" width="36" height="22" rx="4" fill="#10B981"/>
+<text x="2833" y="49" text-anchor="middle" class="badge-txt" font-size="11">GEO</text>
+<text x="2859" y="49" class="sub" font-size="13" fill="#E2E8F0">Spatial SRID 4326</text>
+<rect x="3020" y="34" width="36" height="22" rx="4" fill="#64748B"/>
+<text x="3038" y="49" text-anchor="middle" class="badge-txt" font-size="11">IDX</text>
+<text x="3064" y="49" class="sub" font-size="13" fill="#E2E8F0">Indexed</text>
+<line x1="2320" y1="84" x2="2375" y2="84" stroke="#38BDF8" stroke-width="2.5"/>
+<text x="2385" y="88" class="sub" font-size="13" fill="#CBD5E1">Garis Solid = Relasi Inti (1:1 / 1:N)</text>
+<line x1="2650" y1="84" x2="2705" y2="84" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="2715" y="88" class="sub" font-size="13" fill="#CBD5E1">Garis Putus = Relasi Lintas Domain / Audit ke users &amp; disaster_events</text>
+<rect x="50" y="145" width="870" height="925" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<rect x="50" y="145" width="870" height="40" rx="12" fill="#1D4ED8"/>
+<rect x="50" y="169" width="870" height="16" fill="#1D4ED8"/>
+<text x="68" y="171" class="title" font-size="15" fill="#FFFFFF">DOMAIN 1 — IDENTITAS, AUTH &amp; RBAC (4 TABEL)</text>
+<rect x="985" y="145" width="1160" height="925" rx="12" fill="#FFF7ED" stroke="#F97316" stroke-width="2"/>
+<rect x="985" y="145" width="1160" height="40" rx="12" fill="#C2410C"/>
+<rect x="985" y="169" width="1160" height="16" fill="#C2410C"/>
+<text x="1003" y="171" class="title" font-size="15" fill="#FFFFFF">DOMAIN 2 — DATA BENCANA &amp; INTEGRASI BMKG / KEHUTANAN (4 TABEL)</text>
+<rect x="2210" y="145" width="1340" height="925" rx="12" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2"/>
+<rect x="2210" y="145" width="1340" height="40" rx="12" fill="#6D28D9"/>
+<rect x="2210" y="169" width="1340" height="16" fill="#6D28D9"/>
+<text x="2228" y="171" class="title" font-size="15" fill="#FFFFFF">DOMAIN 3 — NOTIFIKASI BERBASIS LOKASI (3 TABEL)</text>
+<rect x="50" y="1150" width="870" height="1310" rx="12" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+<rect x="50" y="1150" width="870" height="40" rx="12" fill="#B91C1C"/>
+<rect x="50" y="1174" width="870" height="16" fill="#B91C1C"/>
+<text x="68" y="1176" class="title" font-size="15" fill="#FFFFFF">DOMAIN 4 — LAPORAN WARGA &amp; VERIFIKASI PETUGAS (3 TABEL)</text>
+<rect x="985" y="1150" width="1525" height="1310" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+<rect x="985" y="1150" width="1525" height="40" rx="12" fill="#047857"/>
+<rect x="985" y="1174" width="1525" height="16" fill="#047857"/>
+<text x="1003" y="1176" class="title" font-size="15" fill="#FFFFFF">DOMAIN 5 — PENGGALANGAN DANA &amp; TRANSPARANSI PENYALURAN (6 TABEL)</text>
+<rect x="2575" y="1150" width="975" height="1310" rx="12" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2"/>
+<rect x="2575" y="1150" width="975" height="40" rx="12" fill="#0F766E"/>
+<rect x="2575" y="1174" width="975" height="16" fill="#0F766E"/>
+<text x="2593" y="1176" class="title" font-size="15" fill="#FFFFFF">DOMAIN 6 — CATATAN MITIGASI &amp; KONTAK DARURAT (4 TABEL)</text>
+<g filter="url(#shadow)">
+<rect x="75" y="210" width="390" height="396" rx="8" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+<rect x="75" y="210" width="390" height="34" rx="8" fill="#1D4ED8"/>
+<rect x="75" y="234" width="390" height="10" fill="#1D4ED8"/>
+<text x="87" y="232" class="tname">users</text>
+<rect x="423" y="218" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="439" y="230" text-anchor="middle" class="badge-txt" font-size="10">16c</text>
+<line x1="75" y1="244" x2="465" y2="244" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="248" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="96.0" y="258" text-anchor="middle" class="badge-txt">PK</text>
+<text x="115" y="259" class="cname">id</text>
+<text x="455" y="259" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="76" y="266" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="266" x2="465" y2="266" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="281" class="cname">name</text>
+<text x="455" y="281" text-anchor="end" class="ctype">VARCHAR(150)</text>
+<line x1="75" y1="288" x2="465" y2="288" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="292" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="96.0" y="302" text-anchor="middle" class="badge-txt">UK</text>
+<text x="115" y="303" class="cname">email</text>
+<text x="455" y="303" text-anchor="end" class="ctype">VARCHAR(191)</text>
+<rect x="76" y="310" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="310" x2="465" y2="310" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="314" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="96.0" y="324" text-anchor="middle" class="badge-txt">UK</text>
+<text x="115" y="325" class="cname">phone</text>
+<text x="455" y="325" text-anchor="end" class="ctype">VARCHAR(30) NULL</text>
+<line x1="75" y1="332" x2="465" y2="332" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="347" class="cname">password</text>
+<text x="455" y="347" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<rect x="76" y="354" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="354" x2="465" y2="354" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="358" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="98.0" y="368" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="115" y="369" class="cname">role</text>
+<text x="455" y="369" text-anchor="end" class="ctype">ENUM(citizen,creator,officer,admin)</text>
+<line x1="75" y1="376" x2="465" y2="376" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="391" class="cname">avatar_url</text>
+<text x="455" y="391" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<rect x="76" y="398" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="398" x2="465" y2="398" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="402" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="98.0" y="412" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="115" y="413" class="cname">kyc_status</text>
+<text x="455" y="413" text-anchor="end" class="ctype">ENUM(unverified..rejected)</text>
+<line x1="75" y1="420" x2="465" y2="420" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="435" class="cname">is_active</text>
+<text x="455" y="435" text-anchor="end" class="ctype">TINYINT(1)</text>
+<rect x="76" y="442" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="442" x2="465" y2="442" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="457" class="cname">email_verified_at</text>
+<text x="455" y="457" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<line x1="75" y1="464" x2="465" y2="464" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="479" class="cname">last_latitude</text>
+<text x="455" y="479" text-anchor="end" class="ctype">DECIMAL(10,7) NULL</text>
+<rect x="76" y="486" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="486" x2="465" y2="486" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="501" class="cname">last_longitude</text>
+<text x="455" y="501" text-anchor="end" class="ctype">DECIMAL(10,7) NULL</text>
+<line x1="75" y1="508" x2="465" y2="508" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="523" class="cname">last_location_at</text>
+<text x="455" y="523" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<rect x="76" y="530" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="530" x2="465" y2="530" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="545" class="cname">remember_token</text>
+<text x="455" y="545" text-anchor="end" class="ctype">VARCHAR(100) NULL</text>
+<line x1="75" y1="552" x2="465" y2="552" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="567" class="cname">created_at / updated_at</text>
+<text x="455" y="567" text-anchor="end" class="ctype">TIMESTAMP</text>
+<rect x="76" y="574" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="574" x2="465" y2="574" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="589" class="cname">deleted_at</text>
+<text x="455" y="589" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="505" y="210" width="395" height="308" rx="8" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+<rect x="505" y="210" width="395" height="34" rx="8" fill="#1D4ED8"/>
+<rect x="505" y="234" width="395" height="10" fill="#1D4ED8"/>
+<text x="517" y="232" class="tname">user_kyc_submissions</text>
+<rect x="858" y="218" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="874" y="230" text-anchor="middle" class="badge-txt" font-size="10">12c</text>
+<line x1="505" y1="244" x2="900" y2="244" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="248" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="526.0" y="258" text-anchor="middle" class="badge-txt">PK</text>
+<text x="545" y="259" class="cname">id</text>
+<text x="890" y="259" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="506" y="266" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="266" x2="900" y2="266" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="270" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="526.0" y="280" text-anchor="middle" class="badge-txt">FK</text>
+<text x="545" y="281" class="cname">user_id</text>
+<text x="890" y="281" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="505" y1="288" x2="900" y2="288" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="303" class="cname">identity_type</text>
+<text x="890" y="303" text-anchor="end" class="ctype">ENUM(ktp,org_sk)</text>
+<rect x="506" y="310" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="310" x2="900" y2="310" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="325" class="cname">identity_number</text>
+<text x="890" y="325" text-anchor="end" class="ctype">VARCHAR(64)</text>
+<line x1="505" y1="332" x2="900" y2="332" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="347" class="cname">organization_name</text>
+<text x="890" y="347" text-anchor="end" class="ctype">VARCHAR(180) NULL</text>
+<rect x="506" y="354" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="354" x2="900" y2="354" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="369" class="cname">id_card_photo_url</text>
+<text x="890" y="369" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<line x1="505" y1="376" x2="900" y2="376" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="391" class="cname">selfie_photo_url</text>
+<text x="890" y="391" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<rect x="506" y="398" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="398" x2="900" y2="398" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="402" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="528.0" y="412" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="545" y="413" class="cname">status</text>
+<text x="890" y="413" text-anchor="end" class="ctype">ENUM(pending,verified,rejected)</text>
+<line x1="505" y1="420" x2="900" y2="420" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="424" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="526.0" y="434" text-anchor="middle" class="badge-txt">FK</text>
+<text x="545" y="435" class="cname">reviewed_by</text>
+<text x="890" y="435" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<rect x="506" y="442" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="442" x2="900" y2="442" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="457" class="cname">review_notes</text>
+<text x="890" y="457" text-anchor="end" class="ctype">TEXT NULL</text>
+<line x1="505" y1="464" x2="900" y2="464" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="479" class="cname">reviewed_at</text>
+<text x="890" y="479" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<rect x="506" y="486" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="486" x2="900" y2="486" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="501" class="cname">created_at / updated_at</text>
+<text x="890" y="501" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="75" y="670" width="390" height="242" rx="8" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+<rect x="75" y="670" width="390" height="34" rx="8" fill="#1D4ED8"/>
+<rect x="75" y="694" width="390" height="10" fill="#1D4ED8"/>
+<text x="87" y="692" class="tname">user_devices</text>
+<rect x="423" y="678" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="439" y="690" text-anchor="middle" class="badge-txt" font-size="10">9c</text>
+<line x1="75" y1="704" x2="465" y2="704" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="708" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="96.0" y="718" text-anchor="middle" class="badge-txt">PK</text>
+<text x="115" y="719" class="cname">id</text>
+<text x="455" y="719" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="76" y="726" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="726" x2="465" y2="726" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="730" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="96.0" y="740" text-anchor="middle" class="badge-txt">FK</text>
+<text x="115" y="741" class="cname">user_id</text>
+<text x="455" y="741" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="75" y1="748" x2="465" y2="748" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="752" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="96.0" y="762" text-anchor="middle" class="badge-txt">UK</text>
+<text x="115" y="763" class="cname">fcm_token</text>
+<text x="455" y="763" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<rect x="76" y="770" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="770" x2="465" y2="770" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="785" class="cname">platform</text>
+<text x="455" y="785" text-anchor="end" class="ctype">ENUM(android,ios,web)</text>
+<line x1="75" y1="792" x2="465" y2="792" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="807" class="cname">device_name</text>
+<text x="455" y="807" text-anchor="end" class="ctype">VARCHAR(120) NULL</text>
+<rect x="76" y="814" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="814" x2="465" y2="814" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="829" class="cname">app_version</text>
+<text x="455" y="829" text-anchor="end" class="ctype">VARCHAR(30) NULL</text>
+<line x1="75" y1="836" x2="465" y2="836" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="851" class="cname">is_active</text>
+<text x="455" y="851" text-anchor="end" class="ctype">TINYINT(1)</text>
+<rect x="76" y="858" width="388" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="858" x2="465" y2="858" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="873" class="cname">last_active_at</text>
+<text x="455" y="873" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<line x1="75" y1="880" x2="465" y2="880" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="895" class="cname">created_at / updated_at</text>
+<text x="455" y="895" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="505" y="670" width="395" height="242" rx="8" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+<rect x="505" y="670" width="395" height="34" rx="8" fill="#1D4ED8"/>
+<rect x="505" y="694" width="395" height="10" fill="#1D4ED8"/>
+<text x="517" y="692" class="tname">personal_access_tokens</text>
+<rect x="858" y="678" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="874" y="690" text-anchor="middle" class="badge-txt" font-size="10">9c</text>
+<line x1="505" y1="704" x2="900" y2="704" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="708" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="526.0" y="718" text-anchor="middle" class="badge-txt">PK</text>
+<text x="545" y="719" class="cname">id</text>
+<text x="890" y="719" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="506" y="726" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="726" x2="900" y2="726" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="730" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="528.0" y="740" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="545" y="741" class="cname">tokenable_type</text>
+<text x="890" y="741" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<line x1="505" y1="748" x2="900" y2="748" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="752" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="528.0" y="762" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="545" y="763" class="cname">tokenable_id</text>
+<text x="890" y="763" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="506" y="770" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="770" x2="900" y2="770" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="785" class="cname">name</text>
+<text x="890" y="785" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<line x1="505" y1="792" x2="900" y2="792" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="513" y="796" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="526.0" y="806" text-anchor="middle" class="badge-txt">UK</text>
+<text x="545" y="807" class="cname">token</text>
+<text x="890" y="807" text-anchor="end" class="ctype">VARCHAR(64)</text>
+<rect x="506" y="814" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="814" x2="900" y2="814" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="829" class="cname">abilities</text>
+<text x="890" y="829" text-anchor="end" class="ctype">TEXT NULL</text>
+<line x1="505" y1="836" x2="900" y2="836" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="851" class="cname">last_used_at</text>
+<text x="890" y="851" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<rect x="506" y="858" width="393" height="22" fill="#F8FAFC"/>
+<line x1="505" y1="858" x2="900" y2="858" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="873" class="cname">expires_at</text>
+<text x="890" y="873" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<line x1="505" y1="880" x2="900" y2="880" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="517" y="895" class="cname">created_at / updated_at</text>
+<text x="890" y="895" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1015" y="210" width="525" height="418" rx="8" fill="#FFFFFF" stroke="#F97316" stroke-width="1.5"/>
+<rect x="1015" y="210" width="525" height="34" rx="8" fill="#C2410C"/>
+<rect x="1015" y="234" width="525" height="10" fill="#C2410C"/>
+<text x="1027" y="232" class="tname">disaster_events</text>
+<rect x="1498" y="218" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="1514" y="230" text-anchor="middle" class="badge-txt" font-size="10">17c</text>
+<line x1="1015" y1="244" x2="1540" y2="244" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="248" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1036.0" y="258" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1055" y="259" class="cname">id</text>
+<text x="1530" y="259" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1016" y="266" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="266" x2="1540" y2="266" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="270" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="1036.0" y="280" text-anchor="middle" class="badge-txt">UK</text>
+<text x="1055" y="281" class="cname">external_id</text>
+<text x="1530" y="281" text-anchor="end" class="ctype">VARCHAR(120) NULL</text>
+<line x1="1015" y1="288" x2="1540" y2="288" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="292" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="1036.0" y="302" text-anchor="middle" class="badge-txt">UK</text>
+<text x="1055" y="303" class="cname">source</text>
+<text x="1530" y="303" text-anchor="end" class="ctype">ENUM(bmkg_eq,tsunami,klhk,firms..)</text>
+<rect x="1016" y="310" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="310" x2="1540" y2="310" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="314" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="324" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="325" class="cname">disaster_type</text>
+<text x="1530" y="325" text-anchor="end" class="ctype">ENUM(earthquake,tsunami,forest_fire)</text>
+<line x1="1015" y1="332" x2="1540" y2="332" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="347" class="cname">title</text>
+<text x="1530" y="347" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<rect x="1016" y="354" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="354" x2="1540" y2="354" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="369" class="cname">description</text>
+<text x="1530" y="369" text-anchor="end" class="ctype">TEXT NULL</text>
+<line x1="1015" y1="376" x2="1540" y2="376" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="380" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="390" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="391" class="cname">severity</text>
+<text x="1530" y="391" text-anchor="end" class="ctype">ENUM(info,low,medium,high,critical)</text>
+<rect x="1016" y="398" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="398" x2="1540" y2="398" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="402" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="412" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="413" class="cname">status</text>
+<text x="1530" y="413" text-anchor="end" class="ctype">ENUM(active,monitoring,resolved,cancel)</text>
+<line x1="1015" y1="420" x2="1540" y2="420" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="435" class="cname">latitude</text>
+<text x="1530" y="435" text-anchor="end" class="ctype">DECIMAL(10,7)</text>
+<rect x="1016" y="442" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="442" x2="1540" y2="442" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="457" class="cname">longitude</text>
+<text x="1530" y="457" text-anchor="end" class="ctype">DECIMAL(10,7)</text>
+<line x1="1015" y1="464" x2="1540" y2="464" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="468" width="30" height="14" rx="3" fill="#10B981"/>
+<text x="1038.0" y="478" text-anchor="middle" class="badge-txt">GEO</text>
+<text x="1055" y="479" class="cname">location_point</text>
+<text x="1530" y="479" text-anchor="end" class="ctype">POINT SRID 4326</text>
+<rect x="1016" y="486" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="486" x2="1540" y2="486" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="490" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="500" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="501" class="cname">region_name / province</text>
+<text x="1530" y="501" text-anchor="end" class="ctype">VARCHAR(180/120)</text>
+<line x1="1015" y1="508" x2="1540" y2="508" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="523" class="cname">regency</text>
+<text x="1530" y="523" text-anchor="end" class="ctype">VARCHAR(120) NULL</text>
+<rect x="1016" y="530" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="530" x2="1540" y2="530" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="545" class="cname">impact_radius_km</text>
+<text x="1530" y="545" text-anchor="end" class="ctype">DECIMAL(6,2)</text>
+<line x1="1015" y1="552" x2="1540" y2="552" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="556" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="566" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="567" class="cname">occurred_at</text>
+<text x="1530" y="567" text-anchor="end" class="ctype">TIMESTAMP</text>
+<rect x="1016" y="574" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="574" x2="1540" y2="574" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="589" class="cname">raw_payload</text>
+<text x="1530" y="589" text-anchor="end" class="ctype">JSON NULL</text>
+<line x1="1015" y1="596" x2="1540" y2="596" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="611" class="cname">created_at / updated_at</text>
+<text x="1530" y="611" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1590" y="210" width="525" height="264" rx="8" fill="#FFFFFF" stroke="#F97316" stroke-width="1.5"/>
+<rect x="1590" y="210" width="525" height="34" rx="8" fill="#C2410C"/>
+<rect x="1590" y="234" width="525" height="10" fill="#C2410C"/>
+<text x="1602" y="232" class="tname">earthquake_tsunami_details</text>
+<rect x="2073" y="218" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="2089" y="230" text-anchor="middle" class="badge-txt" font-size="10">10c</text>
+<line x1="1590" y1="244" x2="2115" y2="244" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="248" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1611.0" y="258" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1630" y="259" class="cname">id</text>
+<text x="2105" y="259" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1591" y="266" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="266" x2="2115" y2="266" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="270" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1611.0" y="280" text-anchor="middle" class="badge-txt">FK</text>
+<rect x="1628" y="270" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="1641.0" y="280" text-anchor="middle" class="badge-txt">UK</text>
+<text x="1662" y="281" class="cname">disaster_event_id</text>
+<text x="2105" y="281" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="1590" y1="288" x2="2115" y2="288" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="292" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1613.0" y="302" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1630" y="303" class="cname">magnitude</text>
+<text x="2105" y="303" text-anchor="end" class="ctype">DECIMAL(4,2)</text>
+<rect x="1591" y="310" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="310" x2="2115" y2="310" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="325" class="cname">depth_km</text>
+<text x="2105" y="325" text-anchor="end" class="ctype">DECIMAL(6,2)</text>
+<line x1="1590" y1="332" x2="2115" y2="332" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="347" class="cname">mmi_felt</text>
+<text x="2105" y="347" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<rect x="1591" y="354" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="354" x2="2115" y2="354" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="358" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1613.0" y="368" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1630" y="369" class="cname">tsunami_potential</text>
+<text x="2105" y="369" text-anchor="end" class="ctype">ENUM(none,waspada,siaga,awas)</text>
+<line x1="1590" y1="376" x2="2115" y2="376" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="391" class="cname">tsunami_message</text>
+<text x="2105" y="391" text-anchor="end" class="ctype">TEXT NULL</text>
+<rect x="1591" y="398" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="398" x2="2115" y2="398" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="413" class="cname">shakemap_url</text>
+<text x="2105" y="413" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="1590" y1="420" x2="2115" y2="420" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="435" class="cname">bmkg_datetime_raw</text>
+<text x="2105" y="435" text-anchor="end" class="ctype">VARCHAR(64) NULL</text>
+<rect x="1591" y="442" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="442" x2="2115" y2="442" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="457" class="cname">created_at / updated_at</text>
+<text x="2105" y="457" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1590" y="530" width="525" height="308" rx="8" fill="#FFFFFF" stroke="#F97316" stroke-width="1.5"/>
+<rect x="1590" y="530" width="525" height="34" rx="8" fill="#C2410C"/>
+<rect x="1590" y="554" width="525" height="10" fill="#C2410C"/>
+<text x="1602" y="552" class="tname">forest_fire_hotspots</text>
+<rect x="2073" y="538" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="2089" y="550" text-anchor="middle" class="badge-txt" font-size="10">12c</text>
+<line x1="1590" y1="564" x2="2115" y2="564" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="568" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1611.0" y="578" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1630" y="579" class="cname">id</text>
+<text x="2105" y="579" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1591" y="586" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="586" x2="2115" y2="586" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="590" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1611.0" y="600" text-anchor="middle" class="badge-txt">FK</text>
+<rect x="1628" y="590" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="1641.0" y="600" text-anchor="middle" class="badge-txt">UK</text>
+<text x="1662" y="601" class="cname">disaster_event_id</text>
+<text x="2105" y="601" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="1590" y1="608" x2="2115" y2="608" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="623" class="cname">satellite</text>
+<text x="2105" y="623" text-anchor="end" class="ctype">VARCHAR(50) NULL</text>
+<rect x="1591" y="630" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="630" x2="2115" y2="630" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="634" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1613.0" y="644" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1630" y="645" class="cname">confidence_level</text>
+<text x="2105" y="645" text-anchor="end" class="ctype">ENUM(low,medium,high)</text>
+<line x1="1590" y1="652" x2="2115" y2="652" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="667" class="cname">confidence_score</text>
+<text x="2105" y="667" text-anchor="end" class="ctype">TINYINT UNSIGNED NULL</text>
+<rect x="1591" y="674" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="674" x2="2115" y2="674" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="689" class="cname">brightness_kelvin</text>
+<text x="2105" y="689" text-anchor="end" class="ctype">DECIMAL(6,2) NULL</text>
+<line x1="1590" y1="696" x2="2115" y2="696" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="711" class="cname">frp_mw</text>
+<text x="2105" y="711" text-anchor="end" class="ctype">DECIMAL(8,2) NULL</text>
+<rect x="1591" y="718" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="718" x2="2115" y2="718" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="733" class="cname">land_cover_type</text>
+<text x="2105" y="733" text-anchor="end" class="ctype">VARCHAR(100) NULL</text>
+<line x1="1590" y1="740" x2="2115" y2="740" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="755" class="cname">forest_area_status</text>
+<text x="2105" y="755" text-anchor="end" class="ctype">VARCHAR(100) NULL</text>
+<rect x="1591" y="762" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="762" x2="2115" y2="762" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="777" class="cname">district</text>
+<text x="2105" y="777" text-anchor="end" class="ctype">VARCHAR(100) NULL</text>
+<line x1="1590" y1="784" x2="2115" y2="784" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1598" y="788" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1613.0" y="798" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1630" y="799" class="cname">acquired_at</text>
+<text x="2105" y="799" text-anchor="end" class="ctype">TIMESTAMP</text>
+<rect x="1591" y="806" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1590" y1="806" x2="2115" y2="806" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1602" y="821" class="cname">created_at / updated_at</text>
+<text x="2105" y="821" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1015" y="700" width="525" height="242" rx="8" fill="#FFFFFF" stroke="#F97316" stroke-width="1.5"/>
+<rect x="1015" y="700" width="525" height="34" rx="8" fill="#C2410C"/>
+<rect x="1015" y="724" width="525" height="10" fill="#C2410C"/>
+<text x="1027" y="722" class="tname">external_sync_logs</text>
+<rect x="1498" y="708" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="1514" y="720" text-anchor="middle" class="badge-txt" font-size="10">9c</text>
+<line x1="1015" y1="734" x2="1540" y2="734" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="738" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1036.0" y="748" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1055" y="749" class="cname">id</text>
+<text x="1530" y="749" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1016" y="756" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="756" x2="1540" y2="756" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="760" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="770" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="771" class="cname">provider</text>
+<text x="1530" y="771" text-anchor="end" class="ctype">ENUM(bmkg_auto,terkini,dirasakan,klhk,firms)</text>
+<line x1="1015" y1="778" x2="1540" y2="778" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="793" class="cname">endpoint_url</text>
+<text x="1530" y="793" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<rect x="1016" y="800" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="800" x2="1540" y2="800" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="815" class="cname">http_status</text>
+<text x="1530" y="815" text-anchor="end" class="ctype">SMALLINT UNSIGNED NULL</text>
+<line x1="1015" y1="822" x2="1540" y2="822" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="826" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="836" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="837" class="cname">status</text>
+<text x="1530" y="837" text-anchor="end" class="ctype">ENUM(success,partial,failed)</text>
+<rect x="1016" y="844" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="844" x2="1540" y2="844" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="859" class="cname">records_fetched / ins / upd</text>
+<text x="1530" y="859" text-anchor="end" class="ctype">INT UNSIGNED</text>
+<line x1="1015" y1="866" x2="1540" y2="866" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="881" class="cname">duration_ms</text>
+<text x="1530" y="881" text-anchor="end" class="ctype">INT UNSIGNED NULL</text>
+<rect x="1016" y="888" width="523" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="888" x2="1540" y2="888" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="903" class="cname">error_message</text>
+<text x="1530" y="903" text-anchor="end" class="ctype">TEXT NULL</text>
+<line x1="1015" y1="910" x2="1540" y2="910" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="914" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="924" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="925" class="cname">synced_at</text>
+<text x="1530" y="925" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="2240" y="210" width="420" height="286" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<rect x="2240" y="210" width="420" height="34" rx="8" fill="#6D28D9"/>
+<rect x="2240" y="234" width="420" height="10" fill="#6D28D9"/>
+<text x="2252" y="232" class="tname">user_monitored_locations</text>
+<rect x="2618" y="218" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="2634" y="230" text-anchor="middle" class="badge-txt" font-size="10">11c</text>
+<line x1="2240" y1="244" x2="2660" y2="244" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2248" y="248" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="2261.0" y="258" text-anchor="middle" class="badge-txt">PK</text>
+<text x="2280" y="259" class="cname">id</text>
+<text x="2650" y="259" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2241" y="266" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="266" x2="2660" y2="266" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2248" y="270" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2261.0" y="280" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2280" y="281" class="cname">user_id</text>
+<text x="2650" y="281" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="2240" y1="288" x2="2660" y2="288" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="303" class="cname">label</text>
+<text x="2650" y="303" text-anchor="end" class="ctype">VARCHAR(80)</text>
+<rect x="2241" y="310" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="310" x2="2660" y2="310" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="325" class="cname">address</text>
+<text x="2650" y="325" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="2240" y1="332" x2="2660" y2="332" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="347" class="cname">latitude</text>
+<text x="2650" y="347" text-anchor="end" class="ctype">DECIMAL(10,7)</text>
+<rect x="2241" y="354" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="354" x2="2660" y2="354" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="369" class="cname">longitude</text>
+<text x="2650" y="369" text-anchor="end" class="ctype">DECIMAL(10,7)</text>
+<line x1="2240" y1="376" x2="2660" y2="376" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2248" y="380" width="30" height="14" rx="3" fill="#10B981"/>
+<text x="2263.0" y="390" text-anchor="middle" class="badge-txt">GEO</text>
+<text x="2280" y="391" class="cname">location_point</text>
+<text x="2650" y="391" text-anchor="end" class="ctype">POINT SRID 4326</text>
+<rect x="2241" y="398" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="398" x2="2660" y2="398" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="413" class="cname">radius_km</text>
+<text x="2650" y="413" text-anchor="end" class="ctype">SMALLINT UNSIGNED</text>
+<line x1="2240" y1="420" x2="2660" y2="420" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="435" class="cname">is_primary</text>
+<text x="2650" y="435" text-anchor="end" class="ctype">TINYINT(1)</text>
+<rect x="2241" y="442" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="442" x2="2660" y2="442" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2248" y="446" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2263.0" y="456" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2280" y="457" class="cname">is_active</text>
+<text x="2650" y="457" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="2240" y1="464" x2="2660" y2="464" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="479" class="cname">created_at / updated_at</text>
+<text x="2650" y="479" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="2240" y="570" width="420" height="330" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<rect x="2240" y="570" width="420" height="34" rx="8" fill="#6D28D9"/>
+<rect x="2240" y="594" width="420" height="10" fill="#6D28D9"/>
+<text x="2252" y="592" class="tname">user_alert_preferences</text>
+<rect x="2618" y="578" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="2634" y="590" text-anchor="middle" class="badge-txt" font-size="10">13c</text>
+<line x1="2240" y1="604" x2="2660" y2="604" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2248" y="608" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="2261.0" y="618" text-anchor="middle" class="badge-txt">PK</text>
+<text x="2280" y="619" class="cname">id</text>
+<text x="2650" y="619" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2241" y="626" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="626" x2="2660" y2="626" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2248" y="630" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2261.0" y="640" text-anchor="middle" class="badge-txt">FK</text>
+<rect x="2278" y="630" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="2291.0" y="640" text-anchor="middle" class="badge-txt">UK</text>
+<text x="2312" y="641" class="cname">user_id</text>
+<text x="2650" y="641" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="2240" y1="648" x2="2660" y2="648" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="663" class="cname">enable_earthquake</text>
+<text x="2650" y="663" text-anchor="end" class="ctype">TINYINT(1)</text>
+<rect x="2241" y="670" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="670" x2="2660" y2="670" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="685" class="cname">min_earthquake_magnitude</text>
+<text x="2650" y="685" text-anchor="end" class="ctype">DECIMAL(3,1)</text>
+<line x1="2240" y1="692" x2="2660" y2="692" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="707" class="cname">enable_tsunami</text>
+<text x="2650" y="707" text-anchor="end" class="ctype">TINYINT(1)</text>
+<rect x="2241" y="714" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="714" x2="2660" y2="714" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="729" class="cname">enable_forest_fire</text>
+<text x="2650" y="729" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="2240" y1="736" x2="2660" y2="736" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="751" class="cname">min_hotspot_confidence</text>
+<text x="2650" y="751" text-anchor="end" class="ctype">ENUM(low,med,high)</text>
+<rect x="2241" y="758" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="758" x2="2660" y2="758" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="773" class="cname">enable_citizen_reports</text>
+<text x="2650" y="773" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="2240" y1="780" x2="2660" y2="780" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="795" class="cname">enable_fundraising_updates</text>
+<text x="2650" y="795" text-anchor="end" class="ctype">TINYINT(1)</text>
+<rect x="2241" y="802" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="802" x2="2660" y2="802" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="817" class="cname">default_radius_km</text>
+<text x="2650" y="817" text-anchor="end" class="ctype">SMALLINT UNSIGNED</text>
+<line x1="2240" y1="824" x2="2660" y2="824" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="839" class="cname">quiet_hours_start / end</text>
+<text x="2650" y="839" text-anchor="end" class="ctype">TIME NULL</text>
+<rect x="2241" y="846" width="418" height="22" fill="#F8FAFC"/>
+<line x1="2240" y1="846" x2="2660" y2="846" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="861" class="cname">bypass_quiet_for_critical</text>
+<text x="2650" y="861" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="2240" y1="868" x2="2660" y2="868" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2252" y="883" class="cname">created_at / updated_at</text>
+<text x="2650" y="883" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="2705" y="210" width="815" height="352" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<rect x="2705" y="210" width="815" height="34" rx="8" fill="#6D28D9"/>
+<rect x="2705" y="234" width="815" height="10" fill="#6D28D9"/>
+<text x="2717" y="232" class="tname">alert_notifications</text>
+<rect x="3478" y="218" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="3494" y="230" text-anchor="middle" class="badge-txt" font-size="10">14c</text>
+<line x1="2705" y1="244" x2="3520" y2="244" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2713" y="248" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="2726.0" y="258" text-anchor="middle" class="badge-txt">PK</text>
+<text x="2745" y="259" class="cname">id</text>
+<text x="3510" y="259" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2706" y="266" width="813" height="22" fill="#F8FAFC"/>
+<line x1="2705" y1="266" x2="3520" y2="266" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2713" y="270" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2726.0" y="280" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2745" y="281" class="cname">user_id</text>
+<text x="3510" y="281" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="2705" y1="288" x2="3520" y2="288" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2713" y="292" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2726.0" y="302" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2745" y="303" class="cname">disaster_event_id</text>
+<text x="3510" y="303" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<rect x="2706" y="310" width="813" height="22" fill="#F8FAFC"/>
+<line x1="2705" y1="310" x2="3520" y2="310" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2713" y="314" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2726.0" y="324" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2745" y="325" class="cname">monitored_location_id</text>
+<text x="3510" y="325" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<line x1="2705" y1="332" x2="3520" y2="332" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="347" class="cname">category</text>
+<text x="3510" y="347" text-anchor="end" class="ctype">ENUM(earthquake,tsunami,forest_fire,report,fund,sys)</text>
+<rect x="2706" y="354" width="813" height="22" fill="#F8FAFC"/>
+<line x1="2705" y1="354" x2="3520" y2="354" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="369" class="cname">priority</text>
+<text x="3510" y="369" text-anchor="end" class="ctype">ENUM(normal,high,critical)</text>
+<line x1="2705" y1="376" x2="3520" y2="376" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="391" class="cname">title</text>
+<text x="3510" y="391" text-anchor="end" class="ctype">VARCHAR(200)</text>
+<rect x="2706" y="398" width="813" height="22" fill="#F8FAFC"/>
+<line x1="2705" y1="398" x2="3520" y2="398" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="413" class="cname">body</text>
+<text x="3510" y="413" text-anchor="end" class="ctype">TEXT</text>
+<line x1="2705" y1="420" x2="3520" y2="420" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="435" class="cname">distance_km</text>
+<text x="3510" y="435" text-anchor="end" class="ctype">DECIMAL(7,2) NULL</text>
+<rect x="2706" y="442" width="813" height="22" fill="#F8FAFC"/>
+<line x1="2705" y1="442" x2="3520" y2="442" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="457" class="cname">payload_json</text>
+<text x="3510" y="457" text-anchor="end" class="ctype">JSON NULL</text>
+<line x1="2705" y1="464" x2="3520" y2="464" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2713" y="468" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2728.0" y="478" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2745" y="479" class="cname">delivery_status</text>
+<text x="3510" y="479" text-anchor="end" class="ctype">ENUM(queued,sent,failed,skipped)</text>
+<rect x="2706" y="486" width="813" height="22" fill="#F8FAFC"/>
+<line x1="2705" y1="486" x2="3520" y2="486" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="501" class="cname">fcm_message_id</text>
+<text x="3510" y="501" text-anchor="end" class="ctype">VARCHAR(191) NULL</text>
+<line x1="2705" y1="508" x2="3520" y2="508" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2713" y="512" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2728.0" y="522" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2745" y="523" class="cname">sent_at / read_at</text>
+<text x="3510" y="523" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<rect x="2706" y="530" width="813" height="22" fill="#F8FAFC"/>
+<line x1="2705" y1="530" x2="3520" y2="530" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2717" y="545" class="cname">created_at / updated_at</text>
+<text x="3510" y="545" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="75" y="1220" width="420" height="440" rx="8" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5"/>
+<rect x="75" y="1220" width="420" height="34" rx="8" fill="#B91C1C"/>
+<rect x="75" y="1244" width="420" height="10" fill="#B91C1C"/>
+<text x="87" y="1242" class="tname">citizen_reports</text>
+<rect x="453" y="1228" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="469" y="1240" text-anchor="middle" class="badge-txt" font-size="10">18c</text>
+<line x1="75" y1="1254" x2="495" y2="1254" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1258" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="96.0" y="1268" text-anchor="middle" class="badge-txt">PK</text>
+<text x="115" y="1269" class="cname">id</text>
+<text x="485" y="1269" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="76" y="1276" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1276" x2="495" y2="1276" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1280" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="96.0" y="1290" text-anchor="middle" class="badge-txt">FK</text>
+<text x="115" y="1291" class="cname">reporter_id</text>
+<text x="485" y="1291" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="75" y1="1298" x2="495" y2="1298" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1302" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="96.0" y="1312" text-anchor="middle" class="badge-txt">FK</text>
+<text x="115" y="1313" class="cname">linked_disaster_event_id</text>
+<text x="485" y="1313" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<rect x="76" y="1320" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1320" x2="495" y2="1320" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1324" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="98.0" y="1334" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="115" y="1335" class="cname">disaster_type</text>
+<text x="485" y="1335" text-anchor="end" class="ctype">ENUM(earthquake,tsunami,forest_fire)</text>
+<line x1="75" y1="1342" x2="495" y2="1342" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1357" class="cname">report_category</text>
+<text x="485" y="1357" text-anchor="end" class="ctype">ENUM(tremor,tsunami,smoke,fire..)</text>
+<rect x="76" y="1364" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1364" x2="495" y2="1364" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1379" class="cname">title</text>
+<text x="485" y="1379" text-anchor="end" class="ctype">VARCHAR(200)</text>
+<line x1="75" y1="1386" x2="495" y2="1386" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1401" class="cname">description</text>
+<text x="485" y="1401" text-anchor="end" class="ctype">TEXT</text>
+<rect x="76" y="1408" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1408" x2="495" y2="1408" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1423" class="cname">severity</text>
+<text x="485" y="1423" text-anchor="end" class="ctype">ENUM(low,medium,high,critical)</text>
+<line x1="75" y1="1430" x2="495" y2="1430" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1445" class="cname">latitude</text>
+<text x="485" y="1445" text-anchor="end" class="ctype">DECIMAL(10,7)</text>
+<rect x="76" y="1452" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1452" x2="495" y2="1452" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1467" class="cname">longitude</text>
+<text x="485" y="1467" text-anchor="end" class="ctype">DECIMAL(10,7)</text>
+<line x1="75" y1="1474" x2="495" y2="1474" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1478" width="30" height="14" rx="3" fill="#10B981"/>
+<text x="98.0" y="1488" text-anchor="middle" class="badge-txt">GEO</text>
+<text x="115" y="1489" class="cname">location_point</text>
+<text x="485" y="1489" text-anchor="end" class="ctype">POINT SRID 4326</text>
+<rect x="76" y="1496" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1496" x2="495" y2="1496" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1511" class="cname">address_text</text>
+<text x="485" y="1511" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="75" y1="1518" x2="495" y2="1518" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1533" class="cname">affected_people_estimate</text>
+<text x="485" y="1533" text-anchor="end" class="ctype">INT UNSIGNED NULL</text>
+<rect x="76" y="1540" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1540" x2="495" y2="1540" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1544" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="98.0" y="1554" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="115" y="1555" class="cname">status</text>
+<text x="485" y="1555" text-anchor="end" class="ctype">ENUM(pending,review,verified,rej,res)</text>
+<line x1="75" y1="1562" x2="495" y2="1562" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1566" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="96.0" y="1576" text-anchor="middle" class="badge-txt">FK</text>
+<text x="115" y="1577" class="cname">verified_by</text>
+<text x="485" y="1577" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<rect x="76" y="1584" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1584" x2="495" y2="1584" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1599" class="cname">verification_notes</text>
+<text x="485" y="1599" text-anchor="end" class="ctype">TEXT NULL</text>
+<line x1="75" y1="1606" x2="495" y2="1606" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="83" y="1610" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="98.0" y="1620" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="115" y="1621" class="cname">verified_at / reported_at</text>
+<text x="485" y="1621" text-anchor="end" class="ctype">TIMESTAMP</text>
+<rect x="76" y="1628" width="418" height="22" fill="#F8FAFC"/>
+<line x1="75" y1="1628" x2="495" y2="1628" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="87" y="1643" class="cname">created_at / updated_at / del</text>
+<text x="485" y="1643" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="525" y="1220" width="370" height="264" rx="8" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5"/>
+<rect x="525" y="1220" width="370" height="34" rx="8" fill="#B91C1C"/>
+<rect x="525" y="1244" width="370" height="10" fill="#B91C1C"/>
+<text x="537" y="1242" class="tname">citizen_report_media</text>
+<rect x="853" y="1228" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="869" y="1240" text-anchor="middle" class="badge-txt" font-size="10">10c</text>
+<line x1="525" y1="1254" x2="895" y2="1254" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="533" y="1258" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="546.0" y="1268" text-anchor="middle" class="badge-txt">PK</text>
+<text x="565" y="1269" class="cname">id</text>
+<text x="885" y="1269" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="526" y="1276" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1276" x2="895" y2="1276" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="533" y="1280" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="546.0" y="1290" text-anchor="middle" class="badge-txt">FK</text>
+<text x="565" y="1291" class="cname">citizen_report_id</text>
+<text x="885" y="1291" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="525" y1="1298" x2="895" y2="1298" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1313" class="cname">media_type</text>
+<text x="885" y="1313" text-anchor="end" class="ctype">ENUM(image,video)</text>
+<rect x="526" y="1320" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1320" x2="895" y2="1320" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1335" class="cname">file_path</text>
+<text x="885" y="1335" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<line x1="525" y1="1342" x2="895" y2="1342" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1357" class="cname">file_url</text>
+<text x="885" y="1357" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<rect x="526" y="1364" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1364" x2="895" y2="1364" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1379" class="cname">mime_type</text>
+<text x="885" y="1379" text-anchor="end" class="ctype">VARCHAR(80)</text>
+<line x1="525" y1="1386" x2="895" y2="1386" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1401" class="cname">file_size_bytes</text>
+<text x="885" y="1401" text-anchor="end" class="ctype">INT UNSIGNED</text>
+<rect x="526" y="1408" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1408" x2="895" y2="1408" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1423" class="cname">caption</text>
+<text x="885" y="1423" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="525" y1="1430" x2="895" y2="1430" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1445" class="cname">sort_order</text>
+<text x="885" y="1445" text-anchor="end" class="ctype">TINYINT UNSIGNED</text>
+<rect x="526" y="1452" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1452" x2="895" y2="1452" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1467" class="cname">created_at</text>
+<text x="885" y="1467" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="525" y="1570" width="370" height="198" rx="8" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5"/>
+<rect x="525" y="1570" width="370" height="34" rx="8" fill="#B91C1C"/>
+<rect x="525" y="1594" width="370" height="10" fill="#B91C1C"/>
+<text x="537" y="1592" class="tname">report_verification_logs</text>
+<rect x="853" y="1578" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="869" y="1590" text-anchor="middle" class="badge-txt" font-size="10">7c</text>
+<line x1="525" y1="1604" x2="895" y2="1604" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="533" y="1608" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="546.0" y="1618" text-anchor="middle" class="badge-txt">PK</text>
+<text x="565" y="1619" class="cname">id</text>
+<text x="885" y="1619" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="526" y="1626" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1626" x2="895" y2="1626" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="533" y="1630" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="546.0" y="1640" text-anchor="middle" class="badge-txt">FK</text>
+<text x="565" y="1641" class="cname">citizen_report_id</text>
+<text x="885" y="1641" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="525" y1="1648" x2="895" y2="1648" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="533" y="1652" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="546.0" y="1662" text-anchor="middle" class="badge-txt">FK</text>
+<text x="565" y="1663" class="cname">actor_id</text>
+<text x="885" y="1663" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="526" y="1670" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1670" x2="895" y2="1670" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1685" class="cname">from_status</text>
+<text x="885" y="1685" text-anchor="end" class="ctype">VARCHAR(30) NULL</text>
+<line x1="525" y1="1692" x2="895" y2="1692" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1707" class="cname">to_status</text>
+<text x="885" y="1707" text-anchor="end" class="ctype">VARCHAR(30)</text>
+<rect x="526" y="1714" width="368" height="22" fill="#F8FAFC"/>
+<line x1="525" y1="1714" x2="895" y2="1714" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1729" class="cname">notes</text>
+<text x="885" y="1729" text-anchor="end" class="ctype">TEXT NULL</text>
+<line x1="525" y1="1736" x2="895" y2="1736" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="537" y="1751" class="cname">created_at</text>
+<text x="885" y="1751" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1015" y="1220" width="465" height="506" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5"/>
+<rect x="1015" y="1220" width="465" height="34" rx="8" fill="#047857"/>
+<rect x="1015" y="1244" width="465" height="10" fill="#047857"/>
+<text x="1027" y="1242" class="tname">fundraising_campaigns</text>
+<rect x="1438" y="1228" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="1454" y="1240" text-anchor="middle" class="badge-txt" font-size="10">21c</text>
+<line x1="1015" y1="1254" x2="1480" y2="1254" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1258" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1036.0" y="1268" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1055" y="1269" class="cname">id</text>
+<text x="1470" y="1269" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1016" y="1276" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1276" x2="1480" y2="1276" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1280" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1036.0" y="1290" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1055" y="1291" class="cname">creator_id</text>
+<text x="1470" y="1291" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="1015" y1="1298" x2="1480" y2="1298" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1302" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1036.0" y="1312" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1055" y="1313" class="cname">disaster_event_id</text>
+<text x="1470" y="1313" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<rect x="1016" y="1320" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1320" x2="1480" y2="1320" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1335" class="cname">title</text>
+<text x="1470" y="1335" text-anchor="end" class="ctype">VARCHAR(200)</text>
+<line x1="1015" y1="1342" x2="1480" y2="1342" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1346" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="1036.0" y="1356" text-anchor="middle" class="badge-txt">UK</text>
+<text x="1055" y="1357" class="cname">slug</text>
+<text x="1470" y="1357" text-anchor="end" class="ctype">VARCHAR(220)</text>
+<rect x="1016" y="1364" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1364" x2="1480" y2="1364" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1379" class="cname">summary</text>
+<text x="1470" y="1379" text-anchor="end" class="ctype">VARCHAR(350)</text>
+<line x1="1015" y1="1386" x2="1480" y2="1386" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1401" class="cname">story</text>
+<text x="1470" y="1401" text-anchor="end" class="ctype">LONGTEXT</text>
+<rect x="1016" y="1408" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1408" x2="1480" y2="1408" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1423" class="cname">banner_image_url</text>
+<text x="1470" y="1423" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="1015" y1="1430" x2="1480" y2="1430" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1445" class="cname">beneficiary_name</text>
+<text x="1470" y="1445" text-anchor="end" class="ctype">VARCHAR(180)</text>
+<rect x="1016" y="1452" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1452" x2="1480" y2="1452" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1467" class="cname">beneficiary_location</text>
+<text x="1470" y="1467" text-anchor="end" class="ctype">VARCHAR(180)</text>
+<line x1="1015" y1="1474" x2="1480" y2="1474" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1489" class="cname">target_amount</text>
+<text x="1470" y="1489" text-anchor="end" class="ctype">DECIMAL(15,2)</text>
+<rect x="1016" y="1496" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1496" x2="1480" y2="1496" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1511" class="cname">collected_amount</text>
+<text x="1470" y="1511" text-anchor="end" class="ctype">DECIMAL(15,2)</text>
+<line x1="1015" y1="1518" x2="1480" y2="1518" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1533" class="cname">disbursed_amount</text>
+<text x="1470" y="1533" text-anchor="end" class="ctype">DECIMAL(15,2)</text>
+<rect x="1016" y="1540" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1540" x2="1480" y2="1540" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1555" class="cname">donor_count</text>
+<text x="1470" y="1555" text-anchor="end" class="ctype">INT UNSIGNED</text>
+<line x1="1015" y1="1562" x2="1480" y2="1562" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1577" class="cname">bank_name / acct / holder</text>
+<text x="1470" y="1577" text-anchor="end" class="ctype">VARCHAR</text>
+<rect x="1016" y="1584" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1584" x2="1480" y2="1584" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1599" class="cname">qris_image_url / doc_url</text>
+<text x="1470" y="1599" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="1015" y1="1606" x2="1480" y2="1606" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1610" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="1620" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="1621" class="cname">starts_at / ends_at</text>
+<text x="1470" y="1621" text-anchor="end" class="ctype">TIMESTAMP</text>
+<rect x="1016" y="1628" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1628" x2="1480" y2="1628" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1632" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="1642" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="1643" class="cname">status</text>
+<text x="1470" y="1643" text-anchor="end" class="ctype">ENUM(draft,pend,active,done..)</text>
+<line x1="1015" y1="1650" x2="1480" y2="1650" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1654" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1036.0" y="1664" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1055" y="1665" class="cname">approved_by</text>
+<text x="1470" y="1665" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<rect x="1016" y="1672" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1672" x2="1480" y2="1672" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1687" class="cname">approval_notes / approved_at</text>
+<text x="1470" y="1687" text-anchor="end" class="ctype">TEXT / TS NULL</text>
+<line x1="1015" y1="1694" x2="1480" y2="1694" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1709" class="cname">created_at / updated_at / del</text>
+<text x="1470" y="1709" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1525" y="1220" width="465" height="440" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5"/>
+<rect x="1525" y="1220" width="465" height="34" rx="8" fill="#047857"/>
+<rect x="1525" y="1244" width="465" height="10" fill="#047857"/>
+<text x="1537" y="1242" class="tname">donations</text>
+<rect x="1948" y="1228" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="1964" y="1240" text-anchor="middle" class="badge-txt" font-size="10">18c</text>
+<line x1="1525" y1="1254" x2="1990" y2="1254" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1258" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1546.0" y="1268" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1565" y="1269" class="cname">id</text>
+<text x="1980" y="1269" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1526" y="1276" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1276" x2="1990" y2="1276" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1280" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1546.0" y="1290" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1565" y="1291" class="cname">campaign_id</text>
+<text x="1980" y="1291" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="1525" y1="1298" x2="1990" y2="1298" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1302" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1546.0" y="1312" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1565" y="1313" class="cname">donor_id</text>
+<text x="1980" y="1313" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<rect x="1526" y="1320" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1320" x2="1990" y2="1320" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1324" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="1546.0" y="1334" text-anchor="middle" class="badge-txt">UK</text>
+<text x="1565" y="1335" class="cname">order_code</text>
+<text x="1980" y="1335" text-anchor="end" class="ctype">VARCHAR(64)</text>
+<line x1="1525" y1="1342" x2="1990" y2="1342" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1357" class="cname">donor_name / donor_email</text>
+<text x="1980" y="1357" text-anchor="end" class="ctype">VARCHAR</text>
+<rect x="1526" y="1364" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1364" x2="1990" y2="1364" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1379" class="cname">is_anonymous</text>
+<text x="1980" y="1379" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="1525" y1="1386" x2="1990" y2="1386" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1401" class="cname">amount</text>
+<text x="1980" y="1401" text-anchor="end" class="ctype">DECIMAL(15,2)</text>
+<rect x="1526" y="1408" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1408" x2="1990" y2="1408" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1423" class="cname">payment_method</text>
+<text x="1980" y="1423" text-anchor="end" class="ctype">ENUM(manual_transfer,simulation)</text>
+<line x1="1525" y1="1430" x2="1990" y2="1430" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1445" class="cname">payment_channel</text>
+<text x="1980" y="1445" text-anchor="end" class="ctype">VARCHAR(60) NULL</text>
+<rect x="1526" y="1452" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1452" x2="1990" y2="1452" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1467" class="cname">sender_bank / acct_name</text>
+<text x="1980" y="1467" text-anchor="end" class="ctype">VARCHAR NULL</text>
+<line x1="1525" y1="1474" x2="1990" y2="1474" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1489" class="cname">payment_proof_url</text>
+<text x="1980" y="1489" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<rect x="1526" y="1496" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1496" x2="1990" y2="1496" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1511" class="cname">payment_proof_note</text>
+<text x="1980" y="1511" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="1525" y1="1518" x2="1990" y2="1518" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1522" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1548.0" y="1532" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1565" y="1533" class="cname">payment_status</text>
+<text x="1980" y="1533" text-anchor="end" class="ctype">ENUM(pend,await,verified,rej,exp)</text>
+<rect x="1526" y="1540" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1540" x2="1990" y2="1540" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1544" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1546.0" y="1554" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1565" y="1555" class="cname">verified_by</text>
+<text x="1980" y="1555" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<line x1="1525" y1="1562" x2="1990" y2="1562" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1577" class="cname">verification_notes / verified_at</text>
+<text x="1980" y="1577" text-anchor="end" class="ctype">TEXT / TS NULL</text>
+<rect x="1526" y="1584" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1584" x2="1990" y2="1584" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1599" class="cname">message</text>
+<text x="1980" y="1599" text-anchor="end" class="ctype">TEXT NULL</text>
+<line x1="1525" y1="1606" x2="1990" y2="1606" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1621" class="cname">paid_at / expires_at</text>
+<text x="1980" y="1621" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<rect x="1526" y="1628" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1628" x2="1990" y2="1628" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1643" class="cname">created_at / updated_at</text>
+<text x="1980" y="1643" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="2030" y="1220" width="450" height="374" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5"/>
+<rect x="2030" y="1220" width="450" height="34" rx="8" fill="#047857"/>
+<rect x="2030" y="1244" width="450" height="10" fill="#047857"/>
+<text x="2042" y="1242" class="tname">fund_disbursements</text>
+<rect x="2438" y="1228" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="2454" y="1240" text-anchor="middle" class="badge-txt" font-size="10">15c</text>
+<line x1="2030" y1="1254" x2="2480" y2="1254" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1258" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="2051.0" y="1268" text-anchor="middle" class="badge-txt">PK</text>
+<text x="2070" y="1269" class="cname">id</text>
+<text x="2470" y="1269" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2031" y="1276" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1276" x2="2480" y2="1276" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1280" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2051.0" y="1290" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2070" y="1291" class="cname">campaign_id</text>
+<text x="2470" y="1291" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="2030" y1="1298" x2="2480" y2="1298" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1302" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2051.0" y="1312" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2070" y="1313" class="cname">submitted_by</text>
+<text x="2470" y="1313" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2031" y="1320" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1320" x2="2480" y2="1320" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1324" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="2051.0" y="1334" text-anchor="middle" class="badge-txt">UK</text>
+<text x="2070" y="1335" class="cname">disbursement_code</text>
+<text x="2470" y="1335" text-anchor="end" class="ctype">VARCHAR(64)</text>
+<line x1="2030" y1="1342" x2="2480" y2="1342" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1357" class="cname">title</text>
+<text x="2470" y="1357" text-anchor="end" class="ctype">VARCHAR(200)</text>
+<rect x="2031" y="1364" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1364" x2="2480" y2="1364" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1379" class="cname">description</text>
+<text x="2470" y="1379" text-anchor="end" class="ctype">TEXT</text>
+<line x1="2030" y1="1386" x2="2480" y2="1386" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1401" class="cname">amount</text>
+<text x="2470" y="1401" text-anchor="end" class="ctype">DECIMAL(15,2)</text>
+<rect x="2031" y="1408" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1408" x2="2480" y2="1408" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1423" class="cname">disbursement_date</text>
+<text x="2470" y="1423" text-anchor="end" class="ctype">DATE</text>
+<line x1="2030" y1="1430" x2="2480" y2="1430" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1445" class="cname">recipient_group / loc</text>
+<text x="2470" y="1445" text-anchor="end" class="ctype">VARCHAR(180)</text>
+<rect x="2031" y="1452" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1452" x2="2480" y2="1452" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1467" class="cname">beneficiary_count</text>
+<text x="2470" y="1467" text-anchor="end" class="ctype">INT UNSIGNED NULL</text>
+<line x1="2030" y1="1474" x2="2480" y2="1474" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1478" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2053.0" y="1488" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2070" y="1489" class="cname">verification_status</text>
+<text x="2470" y="1489" text-anchor="end" class="ctype">ENUM(pending,verified,rejected)</text>
+<rect x="2031" y="1496" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1496" x2="2480" y2="1496" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1500" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2051.0" y="1510" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2070" y="1511" class="cname">verified_by</text>
+<text x="2470" y="1511" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<line x1="2030" y1="1518" x2="2480" y2="1518" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1533" class="cname">verification_notes</text>
+<text x="2470" y="1533" text-anchor="end" class="ctype">TEXT NULL</text>
+<rect x="2031" y="1540" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1540" x2="2480" y2="1540" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1555" class="cname">verified_at</text>
+<text x="2470" y="1555" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<line x1="2030" y1="1562" x2="2480" y2="1562" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1577" class="cname">created_at / updated_at</text>
+<text x="2470" y="1577" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1015" y="1860" width="465" height="242" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5"/>
+<rect x="1015" y="1860" width="465" height="34" rx="8" fill="#047857"/>
+<rect x="1015" y="1884" width="465" height="10" fill="#047857"/>
+<text x="1027" y="1882" class="tname">campaign_updates</text>
+<rect x="1438" y="1868" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="1454" y="1880" text-anchor="middle" class="badge-txt" font-size="10">9c</text>
+<line x1="1015" y1="1894" x2="1480" y2="1894" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1898" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1036.0" y="1908" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1055" y="1909" class="cname">id</text>
+<text x="1470" y="1909" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1016" y="1916" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1916" x2="1480" y2="1916" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1920" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1036.0" y="1930" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1055" y="1931" class="cname">campaign_id</text>
+<text x="1470" y="1931" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="1015" y1="1938" x2="1480" y2="1938" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1942" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1036.0" y="1952" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1055" y="1953" class="cname">author_id</text>
+<text x="1470" y="1953" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1016" y="1960" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="1960" x2="1480" y2="1960" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="1964" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1036.0" y="1974" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1055" y="1975" class="cname">disbursement_id</text>
+<text x="1470" y="1975" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<line x1="1015" y1="1982" x2="1480" y2="1982" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="1997" class="cname">title</text>
+<text x="1470" y="1997" text-anchor="end" class="ctype">VARCHAR(200)</text>
+<rect x="1016" y="2004" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="2004" x2="1480" y2="2004" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="2019" class="cname">content</text>
+<text x="1470" y="2019" text-anchor="end" class="ctype">TEXT</text>
+<line x1="1015" y1="2026" x2="1480" y2="2026" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="2041" class="cname">image_url</text>
+<text x="1470" y="2041" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<rect x="1016" y="2048" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1015" y1="2048" x2="1480" y2="2048" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1023" y="2052" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="1038.0" y="2062" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="1055" y="2063" class="cname">published_at</text>
+<text x="1470" y="2063" text-anchor="end" class="ctype">TIMESTAMP</text>
+<line x1="1015" y1="2070" x2="1480" y2="2070" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1027" y="2085" class="cname">created_at / updated_at</text>
+<text x="1470" y="2085" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="1525" y="1860" width="465" height="242" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5"/>
+<rect x="1525" y="1860" width="465" height="34" rx="8" fill="#047857"/>
+<rect x="1525" y="1884" width="465" height="10" fill="#047857"/>
+<text x="1537" y="1882" class="tname">disbursement_items</text>
+<rect x="1948" y="1868" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="1964" y="1880" text-anchor="middle" class="badge-txt" font-size="10">9c</text>
+<line x1="1525" y1="1894" x2="1990" y2="1894" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1898" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="1546.0" y="1908" text-anchor="middle" class="badge-txt">PK</text>
+<text x="1565" y="1909" class="cname">id</text>
+<text x="1980" y="1909" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="1526" y="1916" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1916" x2="1990" y2="1916" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="1533" y="1920" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="1546.0" y="1930" text-anchor="middle" class="badge-txt">FK</text>
+<text x="1565" y="1931" class="cname">disbursement_id</text>
+<text x="1980" y="1931" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="1525" y1="1938" x2="1990" y2="1938" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1953" class="cname">item_name</text>
+<text x="1980" y="1953" text-anchor="end" class="ctype">VARCHAR(180)</text>
+<rect x="1526" y="1960" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="1960" x2="1990" y2="1960" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1975" class="cname">category</text>
+<text x="1980" y="1975" text-anchor="end" class="ctype">ENUM(food,med,shelter,cloth,log,rec,oth)</text>
+<line x1="1525" y1="1982" x2="1990" y2="1982" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="1997" class="cname">quantity</text>
+<text x="1980" y="1997" text-anchor="end" class="ctype">DECIMAL(10,2)</text>
+<rect x="1526" y="2004" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="2004" x2="1990" y2="2004" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="2019" class="cname">unit</text>
+<text x="1980" y="2019" text-anchor="end" class="ctype">VARCHAR(30)</text>
+<line x1="1525" y1="2026" x2="1990" y2="2026" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="2041" class="cname">unit_price</text>
+<text x="1980" y="2041" text-anchor="end" class="ctype">DECIMAL(15,2)</text>
+<rect x="1526" y="2048" width="463" height="22" fill="#F8FAFC"/>
+<line x1="1525" y1="2048" x2="1990" y2="2048" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="2063" class="cname">subtotal</text>
+<text x="1980" y="2063" text-anchor="end" class="ctype">DECIMAL(15,2)</text>
+<line x1="1525" y1="2070" x2="1990" y2="2070" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="1537" y="2085" class="cname">created_at</text>
+<text x="1980" y="2085" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="2030" y="1860" width="450" height="198" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5"/>
+<rect x="2030" y="1860" width="450" height="34" rx="8" fill="#047857"/>
+<rect x="2030" y="1884" width="450" height="10" fill="#047857"/>
+<text x="2042" y="1882" class="tname">disbursement_evidences</text>
+<rect x="2438" y="1868" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="2454" y="1880" text-anchor="middle" class="badge-txt" font-size="10">7c</text>
+<line x1="2030" y1="1894" x2="2480" y2="1894" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1898" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="2051.0" y="1908" text-anchor="middle" class="badge-txt">PK</text>
+<text x="2070" y="1909" class="cname">id</text>
+<text x="2470" y="1909" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2031" y="1916" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1916" x2="2480" y2="1916" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2038" y="1920" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2051.0" y="1930" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2070" y="1931" class="cname">disbursement_id</text>
+<text x="2470" y="1931" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="2030" y1="1938" x2="2480" y2="1938" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1953" class="cname">evidence_type</text>
+<text x="2470" y="1953" text-anchor="end" class="ctype">ENUM(receipt,transfer,photo,report)</text>
+<rect x="2031" y="1960" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="1960" x2="2480" y2="1960" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1975" class="cname">file_path</text>
+<text x="2470" y="1975" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<line x1="2030" y1="1982" x2="2480" y2="1982" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="1997" class="cname">file_url</text>
+<text x="2470" y="1997" text-anchor="end" class="ctype">VARCHAR(255)</text>
+<rect x="2031" y="2004" width="448" height="22" fill="#F8FAFC"/>
+<line x1="2030" y1="2004" x2="2480" y2="2004" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="2019" class="cname">caption</text>
+<text x="2470" y="2019" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="2030" y1="2026" x2="2480" y2="2026" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2042" y="2041" class="cname">uploaded_at</text>
+<text x="2470" y="2041" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="2605" y="1220" width="455" height="330" rx="8" fill="#FFFFFF" stroke="#14B8A6" stroke-width="1.5"/>
+<rect x="2605" y="1220" width="455" height="34" rx="8" fill="#0F766E"/>
+<rect x="2605" y="1244" width="455" height="10" fill="#0F766E"/>
+<text x="2617" y="1242" class="tname">mitigation_guides</text>
+<rect x="3018" y="1228" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="3034" y="1240" text-anchor="middle" class="badge-txt" font-size="10">13c</text>
+<line x1="2605" y1="1254" x2="3060" y2="1254" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1258" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="2626.0" y="1268" text-anchor="middle" class="badge-txt">PK</text>
+<text x="2645" y="1269" class="cname">id</text>
+<text x="3050" y="1269" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2606" y="1276" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1276" x2="3060" y2="1276" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1280" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2628.0" y="1290" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2645" y="1291" class="cname">disaster_type</text>
+<text x="3050" y="1291" text-anchor="end" class="ctype">ENUM(earthquake,tsunami,forest_fire)</text>
+<line x1="2605" y1="1298" x2="3060" y2="1298" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1302" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2628.0" y="1312" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2645" y="1313" class="cname">phase</text>
+<text x="3050" y="1313" text-anchor="end" class="ctype">ENUM(before,during,after)</text>
+<rect x="2606" y="1320" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1320" x2="3060" y2="1320" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1335" class="cname">title</text>
+<text x="3050" y="1335" text-anchor="end" class="ctype">VARCHAR(200)</text>
+<line x1="2605" y1="1342" x2="3060" y2="1342" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1346" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="2626.0" y="1356" text-anchor="middle" class="badge-txt">UK</text>
+<text x="2645" y="1357" class="cname">slug</text>
+<text x="3050" y="1357" text-anchor="end" class="ctype">VARCHAR(220)</text>
+<rect x="2606" y="1364" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1364" x2="3060" y2="1364" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1379" class="cname">summary</text>
+<text x="3050" y="1379" text-anchor="end" class="ctype">VARCHAR(350)</text>
+<line x1="2605" y1="1386" x2="3060" y2="1386" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1401" class="cname">content</text>
+<text x="3050" y="1401" text-anchor="end" class="ctype">LONGTEXT</text>
+<rect x="2606" y="1408" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1408" x2="3060" y2="1408" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1423" class="cname">icon_name</text>
+<text x="3050" y="1423" text-anchor="end" class="ctype">VARCHAR(80) NULL</text>
+<line x1="2605" y1="1430" x2="3060" y2="1430" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1445" class="cname">priority_order</text>
+<text x="3050" y="1445" text-anchor="end" class="ctype">TINYINT UNSIGNED</text>
+<rect x="2606" y="1452" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1452" x2="3060" y2="1452" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1467" class="cname">source_reference</text>
+<text x="3050" y="1467" text-anchor="end" class="ctype">VARCHAR(200) NULL</text>
+<line x1="2605" y1="1474" x2="3060" y2="1474" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1489" class="cname">is_published</text>
+<text x="3050" y="1489" text-anchor="end" class="ctype">TINYINT(1)</text>
+<rect x="2606" y="1496" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1496" x2="3060" y2="1496" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1500" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="2626.0" y="1510" text-anchor="middle" class="badge-txt">FK</text>
+<text x="2645" y="1511" class="cname">created_by / updated_by</text>
+<text x="3050" y="1511" text-anchor="end" class="ctype">BIGINT UNSIGNED NULL</text>
+<line x1="2605" y1="1518" x2="3060" y2="1518" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1533" class="cname">created_at / updated_at</text>
+<text x="3050" y="1533" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="3090" y="1220" width="430" height="220" rx="8" fill="#FFFFFF" stroke="#14B8A6" stroke-width="1.5"/>
+<rect x="3090" y="1220" width="430" height="34" rx="8" fill="#0F766E"/>
+<rect x="3090" y="1244" width="430" height="10" fill="#0F766E"/>
+<text x="3102" y="1242" class="tname">mitigation_steps</text>
+<rect x="3478" y="1228" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="3494" y="1240" text-anchor="middle" class="badge-txt" font-size="10">8c</text>
+<line x1="3090" y1="1254" x2="3520" y2="1254" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="3098" y="1258" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="3111.0" y="1268" text-anchor="middle" class="badge-txt">PK</text>
+<text x="3130" y="1269" class="cname">id</text>
+<text x="3510" y="1269" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="3091" y="1276" width="428" height="22" fill="#F8FAFC"/>
+<line x1="3090" y1="1276" x2="3520" y2="1276" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="3098" y="1280" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="3111.0" y="1290" text-anchor="middle" class="badge-txt">FK</text>
+<text x="3130" y="1291" class="cname">mitigation_guide_id</text>
+<text x="3510" y="1291" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="3090" y1="1298" x2="3520" y2="1298" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="3098" y="1302" width="26" height="14" rx="3" fill="#8B5CF6"/>
+<text x="3111.0" y="1312" text-anchor="middle" class="badge-txt">UK</text>
+<text x="3130" y="1313" class="cname">step_number</text>
+<text x="3510" y="1313" text-anchor="end" class="ctype">TINYINT UNSIGNED</text>
+<rect x="3091" y="1320" width="428" height="22" fill="#F8FAFC"/>
+<line x1="3090" y1="1320" x2="3520" y2="1320" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1335" class="cname">title</text>
+<text x="3510" y="1335" text-anchor="end" class="ctype">VARCHAR(180)</text>
+<line x1="3090" y1="1342" x2="3520" y2="1342" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1357" class="cname">instruction</text>
+<text x="3510" y="1357" text-anchor="end" class="ctype">TEXT</text>
+<rect x="3091" y="1364" width="428" height="22" fill="#F8FAFC"/>
+<line x1="3090" y1="1364" x2="3520" y2="1364" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1379" class="cname">is_critical_action</text>
+<text x="3510" y="1379" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="3090" y1="1386" x2="3520" y2="1386" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1401" class="cname">illustration_url</text>
+<text x="3510" y="1401" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<rect x="3091" y="1408" width="428" height="22" fill="#F8FAFC"/>
+<line x1="3090" y1="1408" x2="3520" y2="1408" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1423" class="cname">created_at / updated_at</text>
+<text x="3510" y="1423" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="3090" y="1620" width="430" height="198" rx="8" fill="#FFFFFF" stroke="#14B8A6" stroke-width="1.5"/>
+<rect x="3090" y="1620" width="430" height="34" rx="8" fill="#0F766E"/>
+<rect x="3090" y="1644" width="430" height="10" fill="#0F766E"/>
+<text x="3102" y="1642" class="tname">user_mitigation_checklists</text>
+<rect x="3478" y="1628" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="3494" y="1640" text-anchor="middle" class="badge-txt" font-size="10">7c</text>
+<line x1="3090" y1="1654" x2="3520" y2="1654" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="3098" y="1658" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="3111.0" y="1668" text-anchor="middle" class="badge-txt">PK</text>
+<text x="3130" y="1669" class="cname">id</text>
+<text x="3510" y="1669" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="3091" y="1676" width="428" height="22" fill="#F8FAFC"/>
+<line x1="3090" y1="1676" x2="3520" y2="1676" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="3098" y="1680" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="3111.0" y="1690" text-anchor="middle" class="badge-txt">FK</text>
+<text x="3130" y="1691" class="cname">user_id</text>
+<text x="3510" y="1691" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<line x1="3090" y1="1698" x2="3520" y2="1698" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="3098" y="1702" width="26" height="14" rx="3" fill="#3B82F6"/>
+<text x="3111.0" y="1712" text-anchor="middle" class="badge-txt">FK</text>
+<text x="3130" y="1713" class="cname">mitigation_step_id</text>
+<text x="3510" y="1713" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="3091" y="1720" width="428" height="22" fill="#F8FAFC"/>
+<line x1="3090" y1="1720" x2="3520" y2="1720" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1735" class="cname">is_completed</text>
+<text x="3510" y="1735" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="3090" y1="1742" x2="3520" y2="1742" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1757" class="cname">completed_at</text>
+<text x="3510" y="1757" text-anchor="end" class="ctype">TIMESTAMP NULL</text>
+<rect x="3091" y="1764" width="428" height="22" fill="#F8FAFC"/>
+<line x1="3090" y1="1764" x2="3520" y2="1764" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1779" class="cname">personal_note</text>
+<text x="3510" y="1779" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<line x1="3090" y1="1786" x2="3520" y2="1786" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="3102" y="1801" class="cname">updated_at</text>
+<text x="3510" y="1801" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<g filter="url(#shadow)">
+<rect x="2605" y="1750" width="455" height="286" rx="8" fill="#FFFFFF" stroke="#14B8A6" stroke-width="1.5"/>
+<rect x="2605" y="1750" width="455" height="34" rx="8" fill="#0F766E"/>
+<rect x="2605" y="1774" width="455" height="10" fill="#0F766E"/>
+<text x="2617" y="1772" class="tname">emergency_contacts</text>
+<rect x="3018" y="1758" width="32" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+<text x="3034" y="1770" text-anchor="middle" class="badge-txt" font-size="10">11c</text>
+<line x1="2605" y1="1784" x2="3060" y2="1784" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1788" width="26" height="14" rx="3" fill="#F59E0B"/>
+<text x="2626.0" y="1798" text-anchor="middle" class="badge-txt">PK</text>
+<text x="2645" y="1799" class="cname">id</text>
+<text x="3050" y="1799" text-anchor="end" class="ctype">BIGINT UNSIGNED</text>
+<rect x="2606" y="1806" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1806" x2="3060" y2="1806" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1821" class="cname">name</text>
+<text x="3050" y="1821" text-anchor="end" class="ctype">VARCHAR(150)</text>
+<line x1="2605" y1="1828" x2="3060" y2="1828" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1843" class="cname">agency</text>
+<text x="3050" y="1843" text-anchor="end" class="ctype">VARCHAR(100)</text>
+<rect x="2606" y="1850" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1850" x2="3060" y2="1850" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1865" class="cname">phone_number</text>
+<text x="3050" y="1865" text-anchor="end" class="ctype">VARCHAR(30)</text>
+<line x1="2605" y1="1872" x2="3060" y2="1872" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1876" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2628.0" y="1886" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2645" y="1887" class="cname">disaster_scope</text>
+<text x="3050" y="1887" text-anchor="end" class="ctype">ENUM(all,eq,tsunami,fire)</text>
+<rect x="2606" y="1894" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1894" x2="3060" y2="1894" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1898" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2628.0" y="1908" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2645" y="1909" class="cname">province</text>
+<text x="3050" y="1909" text-anchor="end" class="ctype">VARCHAR(100) NULL</text>
+<line x1="2605" y1="1916" x2="3060" y2="1916" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1931" class="cname">description</text>
+<text x="3050" y="1931" text-anchor="end" class="ctype">VARCHAR(255) NULL</text>
+<rect x="2606" y="1938" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1938" x2="3060" y2="1938" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1953" class="cname">is_national</text>
+<text x="3050" y="1953" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="2605" y1="1960" x2="3060" y2="1960" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="1975" class="cname">sort_order</text>
+<text x="3050" y="1975" text-anchor="end" class="ctype">SMALLINT UNSIGNED</text>
+<rect x="2606" y="1982" width="453" height="22" fill="#F8FAFC"/>
+<line x1="2605" y1="1982" x2="3060" y2="1982" stroke="#E2E8F0" stroke-width="0.8"/>
+<rect x="2613" y="1986" width="30" height="14" rx="3" fill="#64748B"/>
+<text x="2628.0" y="1996" text-anchor="middle" class="badge-txt">IDX</text>
+<text x="2645" y="1997" class="cname">is_active</text>
+<text x="3050" y="1997" text-anchor="end" class="ctype">TINYINT(1)</text>
+<line x1="2605" y1="2004" x2="3060" y2="2004" stroke="#E2E8F0" stroke-width="0.8"/>
+<text x="2617" y="2019" class="cname">created_at / updated_at</text>
+<text x="3050" y="2019" text-anchor="end" class="ctype">TIMESTAMP</text>
+</g>
+<path d="M 505.0,277.0 L 485.0,277.0 L 485.0,255.0 L 467.0,255.0" fill="none" stroke="#2563EB" stroke-width="2.1" marker-end="url(#arrow-blue)"/>
+<rect x="470" y="269.0" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1"/>
+<text x="485" y="281.0" text-anchor="middle" class="rel-lbl" fill="#2563EB">N:1</text>
+<path d="M 75.0,737.0 L 58.0,737.0 L 58.0,267.0 L 73.0,267.0" fill="none" stroke="#2563EB" stroke-width="2.1" marker-end="url(#arrow-blue)"/>
+<rect x="43" y="441" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1"/>
+<text x="58" y="453" text-anchor="middle" class="rel-lbl" fill="#2563EB">N:1</text>
+<path d="M 1590.0,277.0 L 1566.0,277.0 L 1566.0,255.0 L 1542.0,255.0" fill="none" stroke="#EA580C" stroke-width="2.1" marker-end="url(#arrow-orange)"/>
+<rect x="1551" y="273.0" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#EA580C" stroke-width="1"/>
+<text x="1566" y="285.0" text-anchor="middle" class="rel-lbl" fill="#EA580C">1:1</text>
+<path d="M 1590.0,597.0 L 1565.0,597.0 L 1565.0,263.0 L 1542.0,263.0" fill="none" stroke="#EA580C" stroke-width="2.1" marker-end="url(#arrow-orange)"/>
+<rect x="1550" y="401" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#EA580C" stroke-width="1"/>
+<text x="1565" y="413" text-anchor="middle" class="rel-lbl" fill="#EA580C">1:1</text>
+<path d="M 2705.0,321.0 L 2682.0,321.0 L 2682.0,255.0 L 2662.0,255.0" fill="none" stroke="#7C3AED" stroke-width="2.1" marker-end="url(#arrow-purple)"/>
+<rect x="2667" y="279.0" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1"/>
+<text x="2682" y="291.0" text-anchor="middle" class="rel-lbl" fill="#7C3AED">N:1</text>
+<path d="M 525.0,1287.0 L 510.0,1287.0 L 510.0,1265.0 L 497.0,1265.0" fill="none" stroke="#DC2626" stroke-width="2.1" marker-end="url(#arrow-red)"/>
+<rect x="495" y="1267.0" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#DC2626" stroke-width="1"/>
+<text x="510" y="1279.0" text-anchor="middle" class="rel-lbl" fill="#DC2626">N:1</text>
+<path d="M 525.0,1637.0 L 510.0,1637.0 L 510.0,1273.0 L 497.0,1273.0" fill="none" stroke="#DC2626" stroke-width="2.1" marker-end="url(#arrow-red)"/>
+<rect x="495" y="1441" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#DC2626" stroke-width="1"/>
+<text x="510" y="1453" text-anchor="middle" class="rel-lbl" fill="#DC2626">N:1</text>
+<path d="M 1525.0,1287.0 L 1502.0,1287.0 L 1502.0,1265.0 L 1482.0,1265.0" fill="none" stroke="#059669" stroke-width="2.1" marker-end="url(#arrow-green)"/>
+<rect x="1487" y="1267.0" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#059669" stroke-width="1"/>
+<text x="1502" y="1279.0" text-anchor="middle" class="rel-lbl" fill="#059669">N:1</text>
+<path d="M 2030.0,1287.0 L 2008.0,1287.0 L 2008.0,1200.0 L 1492.0,1200.0 L 1492.0,1259.0 L 1482.0,1259.0" fill="none" stroke="#059669" stroke-width="2.1" marker-end="url(#arrow-green)"/>
+<rect x="1735" y="1191" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#059669" stroke-width="1"/>
+<text x="1750" y="1203" text-anchor="middle" class="rel-lbl" fill="#059669">N:1</text>
+<path d="M 1990.0,1927.0 L 2008.0,1927.0 L 2008.0,1265.0 L 2028.0,1265.0" fill="none" stroke="#059669" stroke-width="2.1" marker-end="url(#arrow-green)"/>
+<rect x="1993" y="1571" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#059669" stroke-width="1"/>
+<text x="2008" y="1583" text-anchor="middle" class="rel-lbl" fill="#059669">N:1</text>
+<path d="M 2480.0,1927.0 L 2495.0,1927.0 L 2495.0,1265.0 L 2482.0,1265.0" fill="none" stroke="#059669" stroke-width="2.1" marker-end="url(#arrow-green)"/>
+<rect x="2480" y="1571" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#059669" stroke-width="1"/>
+<text x="2495" y="1583" text-anchor="middle" class="rel-lbl" fill="#059669">N:1</text>
+<path d="M 1015.0,1927.0 L 1000.0,1927.0 L 1000.0,1265.0 L 1013.0,1265.0" fill="none" stroke="#059669" stroke-width="2.1" marker-end="url(#arrow-green)"/>
+<rect x="985" y="1551" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#059669" stroke-width="1"/>
+<text x="1000" y="1563" text-anchor="middle" class="rel-lbl" fill="#059669">N:1</text>
+<path d="M 1480.0,1971.0 L 1502.0,1971.0 L 1502.0,1815.0 L 2008.0,1815.0 L 2008.0,1273.0 L 2028.0,1273.0" fill="none" stroke="#059669" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-green)"/>
+<rect x="1735" y="1806" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#059669" stroke-width="1"/>
+<text x="1750" y="1818" text-anchor="middle" class="rel-lbl" fill="#059669">N:1</text>
+<path d="M 3090.0,1287.0 L 3074.0,1287.0 L 3074.0,1265.0 L 3062.0,1265.0" fill="none" stroke="#0D9488" stroke-width="2.1" marker-end="url(#arrow-teal)"/>
+<rect x="3059" y="1267.0" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#0D9488" stroke-width="1"/>
+<text x="3074" y="1279.0" text-anchor="middle" class="rel-lbl" fill="#0D9488">N:1</text>
+<path d="M 3520.0,1709.0 L 3534.0,1709.0 L 3534.0,1265.0 L 3522.0,1265.0" fill="none" stroke="#0D9488" stroke-width="2.1" marker-end="url(#arrow-teal)"/>
+<rect x="3519" y="1451" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#0D9488" stroke-width="1"/>
+<text x="3534" y="1463" text-anchor="middle" class="rel-lbl" fill="#0D9488">N:1</text>
+<path d="M 2240.0,277.0 L 2225.0,277.0 L 2225.0,130.0 L 36.0,130.0 L 36.0,255.0 L 73.0,255.0" fill="none" stroke="#475569" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-slate)"/>
+<rect x="1285" y="121" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1"/>
+<text x="1300" y="133" text-anchor="middle" class="rel-lbl" fill="#475569">N:1</text>
+<path d="M 2240.0,637.0 L 2225.0,637.0 L 2225.0,130.0" fill="none" stroke="#475569" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-slate)"/>
+<path d="M 2705.0,277.0 L 2690.0,277.0 L 2690.0,130.0 L 2225.0,130.0" fill="none" stroke="#475569" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-slate)"/>
+<path d="M 2705.0,299.0 L 2674.0,299.0 L 2674.0,1085.0 L 1554.0,1085.0 L 1554.0,271.0 L 1542.0,271.0" fill="none" stroke="#EA580C" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+<rect x="1935" y="1076" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#EA580C" stroke-width="1"/>
+<text x="1950" y="1088" text-anchor="middle" class="rel-lbl" fill="#EA580C">N:1</text>
+<path d="M 75.0,1287.0 L 22.0,1287.0 L 22.0,255.0 L 73.0,255.0" fill="none" stroke="#475569" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-slate)"/>
+<rect x="7" y="791" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1"/>
+<text x="22" y="803" text-anchor="middle" class="rel-lbl" fill="#475569">N:1</text>
+<path d="M 495.0,1309.0 L 502.0,1309.0 L 502.0,1105.0 L 960.0,1105.0 L 960.0,267.0 L 1013.0,267.0" fill="none" stroke="#EA580C" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+<rect x="715" y="1096" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#EA580C" stroke-width="1"/>
+<text x="730" y="1108" text-anchor="middle" class="rel-lbl" fill="#EA580C">N:1</text>
+<path d="M 1015.0,1309.0 L 960.0,1309.0 L 960.0,1122.0 L 960.0,267.0" fill="none" stroke="#EA580C" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+<rect x="945" y="1161" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#EA580C" stroke-width="1"/>
+<text x="960" y="1173" text-anchor="middle" class="rel-lbl" fill="#EA580C">N:1</text>
+<path d="M 1015.0,1287.0 L 942.0,1287.0 L 942.0,1125.0 L 485.0,1125.0 L 485.0,272.0 L 467.0,272.0" fill="none" stroke="#475569" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-slate)"/>
+<rect x="685" y="1116" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1"/>
+<text x="700" y="1128" text-anchor="middle" class="rel-lbl" fill="#475569">N:1</text>
+<path d="M 3090.0,1687.0 L 3074.0,1687.0 L 3074.0,2485.0 L 22.0,2485.0 L 22.0,1265.0" fill="none" stroke="#475569" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#arrow-slate)"/>
+<rect x="1585" y="2476" width="30" height="16" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1"/>
+<text x="1600" y="2488" text-anchor="middle" class="rel-lbl" fill="#475569">N:1</text>
+<rect x="50" y="2495" width="3500" height="34" rx="6" fill="#E2E8F0"/>
+<text x="70" y="2517" class="sub" font-size="13" fill="#334155">Catatan Audit Relasi (35 FK total): Relasi audit sekunder ke users.id (reviewed_by, verified_by, approved_by, actor_id, submitted_by, author_id, donor_id, created_by/updated_by) ditandai badge [FK] pada kolom masing-masing dan terverifikasi pada docs/database/schema.sql.</text>
+</svg>
